@@ -1,7 +1,9 @@
 import React from 'react'
 
+import { Typography } from '@mui/material'
+
 const Text = () => {
-  return <p>Test Text Component</p>
+  return <Typography sx={{ color: 'red' }}>Test Text Component</Typography>
 }
 
 export default Text
