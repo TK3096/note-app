@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-import Text from "@components/Text";
+import Text from '@components/Text'
 
 const HomePage = () => {
   return (
@@ -8,7 +8,7 @@ const HomePage = () => {
       <div>Home Page</div>
       <Text />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
