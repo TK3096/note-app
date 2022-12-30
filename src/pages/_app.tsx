@@ -1,6 +1,31 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import type { NextPage } from 'next'
+import type { ReactElement, ReactNode } from 'react'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import Head from 'next/head'
+
+import '../styles/globals.css'
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
 }
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(
+    <>
+      <Head>
+        <title>NextJs template typescript MUI</title>
+      </Head>
+      <Component {...pageProps} />
+    </>,
+  )
+}
+
+export default App
