@@ -9,7 +9,7 @@ import type { NextPageWithLayout } from './_app'
 const HomePage: NextPageWithLayout = () => {
   return (
     <div>
-      <div>Home Page</div>
+      <div>Home Page Test</div>
       <Text />
       <Button variant='contained'>click</Button>
     </div>
